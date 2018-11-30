@@ -1,8 +1,19 @@
 package com.ttn;
 
+import com.ttn.services.ShapeService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Application {
 
     public static void main(String[] args) {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
+        shapeService.getTriangle().setName("Dummy triangle name");
+//        shapeService.getCircle().getName();
+
+
 //        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 

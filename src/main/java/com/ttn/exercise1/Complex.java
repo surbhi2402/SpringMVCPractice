@@ -1,4 +1,4 @@
-package com.ttn;
+package com.ttn.exercise1;
 
 import java.util.List;
 import java.util.Map;
