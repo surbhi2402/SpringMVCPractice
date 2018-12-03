@@ -1,4 +1,4 @@
-package com.ttn;
+package com.ttn.exercise1;
 
 import org.springframework.beans.factory.annotation.Required;
 

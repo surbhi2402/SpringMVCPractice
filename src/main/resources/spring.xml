@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
 
     <!--<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
-    <!--<bean id="database" class="com.ttn.Database">
+    <bean id="database" class="com.ttn.exercise3.Database">
         <property name="port" value="8181"/>
         <property name="name" value="TestDB"/>
-    </bean>-->
+    </bean>
 
-    <bean
+    <!--<context:component-scan base-package="com.ttn.EventListeners"/>-->
+    <!--<context:component-scan base-package="com.ttn.EventHandlers"/>-->
+
+    <bean id="myCustomEventHandler" class="com.ttn.exercise3.CustomEventHandler"/>
+    <!--<bean id="myCustomEventPublisher" class="com.ttn.exercise3.CustomEventPublisher"/>-->
+
+
+    <!--<bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/" />
         <property name="suffix" value=".jsp" />
@@ -20,11 +28,11 @@
 
 
 
-    <bean id="restaurantRepository" class="com.ttn.RestaurantRepository"/>
-    <bean id="hotDrink" class="com.ttn.Tea"/>
-    <bean id="expressTea" class="com.ttn.ExpressTea"/>
-    <bean id="restaurant" class="com.ttn.Restaurant">
-    </bean>
+    <bean id="restaurantRepository" class="com.ttn.exercise1.RestaurantRepository"/>
+    <bean id="hotDrink" class="com.ttn.exercise1.Tea"/>
+    <bean id="expressTea" class="com.ttn.exercise1.ExpressTea"/>
+    <bean id="restaurant" class="com.ttn.exercise1.Restaurant">
+    </bean>-->
 
 
         <!--<bean id="expressTeaRestaurant" class="com.ttn.Restaurant">

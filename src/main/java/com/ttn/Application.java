@@ -1,10 +1,26 @@
 package com.ttn;
 
+import com.ttn.exercise3.Database;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Application {
 
     public static void main(String[] args) {
+
+
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        Database database = (Database) context.getBean("database");
+        database.connect();
+        System.out.println("DB variables -> Port: "+ database.getPort() + " Name: "+ database.getName());
+
+
+//        CustomEventPublisher customEventPublisher = (CustomEventPublisher) context.getBean("myCustomEventPublisher");
+//        customEventPublisher.publish();
+//        customEventPublisher.publish();
+
+
 //        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
-//        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         /* Q1:
         Database database = (Database) context.getBean("database");
@@ -28,8 +44,7 @@ public class Application {
         Restaurant teaRestaurant2 = (Restaurant) context.getBean("expressTeaRestaurant");
         System.out.println(teaRestaurant2);*/
 
-        /*Database database = (Database) context.getBean("database");
-        database.test();*/
+
 
 
         /*RestaurantRepository repository = (RestaurantRepository) context.getBean("restaurantRepository");

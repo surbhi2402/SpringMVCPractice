@@ -1,4 +1,4 @@
-package com.ttn;
+package com.ttn.exercise1;
 
 public interface ObjectRepository<T> {
 
